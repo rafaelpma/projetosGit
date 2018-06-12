@@ -34,6 +34,7 @@ class FragmentLista : Fragment() {
         val root = inflater.inflate(R.layout.fragment_fragment_lista, container, false)
 
         val itens = ArrayList<Tarefa>()
+        itens.addAll(RepositorioTarefas.tarefas);
 
 
         itens.add(Tarefa("Estudo 1", "Descricao linha 1"))

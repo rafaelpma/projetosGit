@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ProjetoTarefasKotlin</string>
+    <string name="btn_incluir">Incluir Tarefa</string>
+    <string name="hint_nome">Nome da Tarefa</string>
+    <string name="hint_data">Data da Tarefa</string>
+    <string name="hint_descricao">Descrição da Tarefa</string>
+    <string name="btn_listarTarefas">Listar Tarefas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

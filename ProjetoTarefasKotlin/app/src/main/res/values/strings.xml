@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">ProjetoTarefasKotlin</string>
-
+    <string name="app_name">ProjectTaskKotlin</string>
+    <string name="btn_incluir">Add Task</string>
+    <string name="hint_nome">Task Name</string>
+    <string name="hint_descricao">Task Description</string>
+    <string name="btn_listarTarefas">Task List</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
