@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageButton
 import android.widget.TextView
 
-class MeuAdapter(context: Context,  private val lista: List<Tarefa>): BaseAdapter() {
+class MeuAdapter(context: Context,  private var lista: List<Tarefa>): BaseAdapter() {
 
 
     private val mInflator: LayoutInflater
@@ -30,7 +31,13 @@ class MeuAdapter(context: Context,  private val lista: List<Tarefa>): BaseAdapte
             vh = view.tag as ListRowHolder
         }
 
-        vh.label.text = lista[position].descricao
+        vh.labelTitulo.text = lista[position].titulo
+        vh.labelDescricao.text = lista[position].descricao
+
+        vh.botaoExluir.setOnClickListener {
+            lista = lista.minus(lista[position])
+            this.notifyDataSetChanged()
+        }
         return view
     }
 
@@ -46,12 +53,21 @@ class MeuAdapter(context: Context,  private val lista: List<Tarefa>): BaseAdapte
         return lista.size
     }
 
+
+
 }
 
 private class ListRowHolder(row: View?) {
-    public val label: TextView
+    public val labelDescricao: TextView
+    public val labelTitulo: TextView
+    public val botaoExluir: ImageButton
 
     init {
-        this.label = row?.findViewById(R.id.txtDescricao) as TextView
+        this.labelTitulo = row?.findViewById(R.id.txtTitulo) as TextView
+        this.labelDescricao = row?.findViewById(R.id.txtDescricao) as TextView
+        this.botaoExluir = row?.findViewById(R.id.imageButton2) as ImageButton
+
+
     }
+
 }

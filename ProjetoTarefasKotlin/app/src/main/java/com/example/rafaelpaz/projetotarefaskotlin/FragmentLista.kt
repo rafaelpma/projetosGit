@@ -37,13 +37,13 @@ class FragmentLista : Fragment() {
         itens.addAll(RepositorioTarefas.tarefas);
 
 
-        itens.add(Tarefa("Estudo 1", "Descricao linha 1"))
-        itens.add(Tarefa("Estudo 2", "Descricao linha 2"))
-        itens.add(Tarefa("Estudo 3", "Descricao linha 3"))
-        itens.add(Tarefa("Estudo 4", "Descricao linha 4"))
-        itens.add(Tarefa("Estudo 5", "Descricao linha 5"))
-        itens.add(Tarefa("Estudo 6", "Descricao linha 6"))
-        itens.add(Tarefa("Estudo 7", "Descricao linha 7"))
+//        itens.add(Tarefa("Estudo 1", "Descricao linha 1"))
+//        itens.add(Tarefa("Estudo 2", "Descricao linha 2"))
+//        itens.add(Tarefa("Estudo 3", "Descricao linha 3"))
+//        itens.add(Tarefa("Estudo 4", "Descricao linha 4"))
+//        itens.add(Tarefa("Estudo 5", "Descricao linha 5"))
+//        itens.add(Tarefa("Estudo 6", "Descricao linha 6"))
+//        itens.add(Tarefa("Estudo 7", "Descricao linha 7"))
 
         //Cria o adapter
         val adapter = MeuAdapter(activity as Context, itens)

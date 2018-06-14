@@ -7,4 +7,8 @@
     <string name="btn_listarTarefas">Listar Tarefas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dialog_title">Informação</string>
+    <string name="dialog_msg">Tarefa Inserida com Sucesso!</string>
+    <string name="salvar">Salvar</string>
+    <string name="cancelar">Cancelar</string>
 </resources>
