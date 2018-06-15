@@ -1,6 +1,6 @@
 package com.example.rafaelpaz.projetotarefaskotlin
 
 object RepositorioTarefas {
-    val tarefas: ArrayList<Tarefa> = ArrayList()
+    var tarefas: ArrayList<Tarefa> = ArrayList()
 
 }

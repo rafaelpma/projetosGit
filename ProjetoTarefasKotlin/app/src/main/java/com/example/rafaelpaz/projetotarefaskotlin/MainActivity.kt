@@ -1,7 +1,6 @@
 package com.example.rafaelpaz.projetotarefaskotlin
 
-import android.app.Dialog
-import android.content.Context
+import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +9,6 @@ import android.support.v7.app.AlertDialog
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.example.rafaelpaz.projetotarefaskotlin.R.layout.*
 
@@ -30,6 +28,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         textNome = findViewById(R.id.nomeTarefa);
         textDescricao = findViewById(R.id.editText);
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK){
+            var texto = data!!.getStringExtra("DETALHE")
+            Toast.makeText(applicationContext,texto,Toast.LENGTH_LONG).show()
+
+        }
+
     }
 
     override fun onClick(v: View?) {

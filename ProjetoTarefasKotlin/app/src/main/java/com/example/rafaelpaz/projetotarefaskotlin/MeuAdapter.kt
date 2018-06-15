@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageButton
 import android.widget.TextView
 
-class MeuAdapter(context: Context,  private var lista: List<Tarefa>): BaseAdapter() {
+class MeuAdapter(context: Context,  var lista: List<Tarefa>): BaseAdapter() {
 
 
     private val mInflator: LayoutInflater
@@ -37,6 +37,7 @@ class MeuAdapter(context: Context,  private var lista: List<Tarefa>): BaseAdapte
         vh.botaoExluir.setOnClickListener {
             lista = lista.minus(lista[position])
             this.notifyDataSetChanged()
+            RepositorioTarefas.tarefas = lista as ArrayList<Tarefa> ;
         }
         return view
     }
