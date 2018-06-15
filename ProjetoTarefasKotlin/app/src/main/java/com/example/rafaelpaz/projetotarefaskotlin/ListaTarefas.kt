@@ -18,7 +18,6 @@ class ListaTarefas : AppCompatActivity(), OnClickListener{
         if (v!!.id == R.id.voltar){
             var intent = Intent()
             // Estou passando esta informação só para verificar o fincionamento do retorno...
-            // devo imprimir no log na outra Activity
             intent.putExtra(DETALHE, "Usuário Clicou no Botão Voltar")
 
             setResult(Activity.RESULT_OK, intent)
