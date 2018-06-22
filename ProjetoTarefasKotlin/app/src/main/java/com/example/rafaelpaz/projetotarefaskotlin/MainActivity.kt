@@ -1,10 +1,17 @@
 package com.example.rafaelpaz.projetotarefaskotlin
 
 import android.app.Activity
+import android.app.Notification
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.media.AudioFormat
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TextInputLayout
+import android.support.v4.app.NotificationCompat
+import android.support.v4.app.NotificationManagerCompat
 import android.support.v7.app.AlertDialog
 import android.view.View
 import android.widget.Button
@@ -59,6 +66,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 textDescricao!!.text.clear() ;
 
             }
+            R.id.btnNotifica ->{
+                var intent = Intent(this, ActivitySecundaria::class.java)
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+                var pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT )
+
+                var notification = NotificationCompat.Builder(this,  "id").
+                        setSmallIcon(R.drawable.navigation_empty_icon).
+                        setContentTitle("Tarefas").setContentText("Texto de tarefas").
+                        setContentIntent(pendingIntent).setAutoCancel(false).build();
+                var manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+                manager.notify(0, notification)
+
+            }
+
         }
 
 
