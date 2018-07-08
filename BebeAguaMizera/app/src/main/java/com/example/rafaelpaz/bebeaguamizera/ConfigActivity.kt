@@ -18,8 +18,7 @@ class ConfigActivity : AppCompatActivity(), View.OnClickListener {
     private var editTextPeso: EditText? = null
     private var editTextQtdDiaria: EditText? = null
 
-    var alarmManager: AlarmManager? = null
-    var alarmIntent: PendingIntent? = null
+
 
     private var QTD_POR_KILO = 35;
 
@@ -35,17 +34,6 @@ class ConfigActivity : AppCompatActivity(), View.OnClickListener {
     private var UMA_HORA :Long = 3600000
     private var DUAS_HORAS :Long = 7200000
 
-    fun ativarAlarme(tempo :Long){
-        val calendar = Calendar.getInstance()
-        calendar.setTimeInMillis(System.currentTimeMillis())
-        alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        intent = Intent(this, AlarmeReceiver::class.java)
-        alarmIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-        alarmManager!!.setRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis+tempo, tempo, alarmIntent)
-
-        Log.i("INFO", "ativarAlarme - Setando tempo para "+tempo+" Milissegundos")
-
-    }
 
     override fun onClick(v: View?) {
         when(v!!.id){
@@ -78,7 +66,7 @@ class ConfigActivity : AppCompatActivity(), View.OnClickListener {
 
                 configuracao.salvarDados(this)
 
-                ativarAlarme(configuracao.intervaloAlerta)
+                AlarmeUtil.ativarAlarme(this, configuracao.intervaloAlerta)
 
                 var intent = Intent()
                 setResult(Activity.RESULT_OK, intent)
