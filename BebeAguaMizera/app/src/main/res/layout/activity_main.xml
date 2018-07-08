@@ -10,12 +10,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quantidade:"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.050"
-        app:layout_constraintVertical_bias="0.080"/>
+        app:layout_constraintVertical_bias="0.070"/>
+
+    <TextView
+        android:id="@+id/textConsumo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.050"
+        app:layout_constraintVertical_bias="0.650"/>
+
+    <TextView
+        android:id="@+id/textRestante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.050"
+        app:layout_constraintVertical_bias="0.750"/>
+
 
     <Button
         android:id="@+id/btnRegConsumo"
@@ -101,6 +129,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="600 ml" />
+
+        <RadioButton
+            android:id="@+id/radioButtonZerarConsumo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ZERAR CONSUMO!" />
 
     </RadioGroup>
 

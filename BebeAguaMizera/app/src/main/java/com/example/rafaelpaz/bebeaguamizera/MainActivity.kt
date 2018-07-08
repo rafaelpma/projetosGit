@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.RadioButton
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity(), OnClickListener {
@@ -16,6 +17,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     private var radioButton300ml : RadioButton? = null
     private var radioButton500ml : RadioButton? = null
     private var radioButton600ml : RadioButton? = null
+    private var radioButtonZerar : RadioButton? = null
+
+    private var textConsumo: TextView? = null
+    private var textRestante: TextView? = null
 
     private var QTD_100ml : Int =  100;
     private var QTD_150ml : Int =  150;
@@ -23,6 +28,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     private var QTD_300ml : Int =  300;
     private var QTD_500ml : Int =  500;
     private var QTD_600ml : Int =  600;
+    private var ZERAR_CONTADOR : Int =  -1;
 
 
     private var CONFIGURACAO = 1;
@@ -38,8 +44,12 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         radioButton300ml = findViewById(R.id.radioButton300ml)
         radioButton500ml = findViewById(R.id.radioButton500ml)
         radioButton600ml = findViewById(R.id.radioButton600ml)
+        radioButtonZerar = findViewById(R.id.radioButtonZerarConsumo)
 
+        textConsumo = findViewById(R.id.textConsumo)
+        textRestante = findViewById(R.id.textRestante)
 
+        carregarDadosTela()
 
     }
 
@@ -52,16 +62,32 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             }
             R.id.btnRegConsumo ->{
                 registraConsumoAgua()
-
+                carregarDadosTela()
 
 
             }
         }
     }
 
-    fun registraConsumoAgua(){
-        var qtd :  Int = retornaQtdSelecionada()
+    fun carregarDadosTela(){
+        var configuracao = Configuracao.create()
+        configuracao.carregarDados(this)
 
+        textConsumo!!.text =  "Consumo :"+configuracao.quantidadeConsumida + " ml"
+        textRestante!!.text = "Faltam  :"+(configuracao.quantidadeDiaria - configuracao.quantidadeConsumida)+" ml"
+
+    }
+
+    fun registraConsumoAgua(){
+        var configuracao = Configuracao.create()
+        configuracao.carregarDados(this)
+        var qtd :  Int = retornaQtdSelecionada()
+        if (qtd == ZERAR_CONTADOR){
+            configuracao.quantidadeConsumida = 0
+        } else {
+            configuracao.quantidadeConsumida = configuracao.quantidadeConsumida + qtd;
+        }
+        configuracao.salvarDados(this)
     }
 
     private fun retornaQtdSelecionada() : Int{
@@ -83,6 +109,9 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         }
         if (radioButton600ml!!.isChecked) {
             retorno = QTD_600ml
+        }
+        if (radioButtonZerar!!.isChecked) {
+            retorno = ZERAR_CONTADOR
         }
 
         return retorno;
