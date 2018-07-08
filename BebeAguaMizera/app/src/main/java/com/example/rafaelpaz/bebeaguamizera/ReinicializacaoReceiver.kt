@@ -8,9 +8,7 @@ import android.content.Intent
 class ReinicializacaoReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        var config = Configuracao.create();
-        config .carregarDados(context)
-
-        AlarmeUtil.ativarAlarme(context, config.intervaloAlerta)
+        var intentService = Intent(context, IntentServiceAlarme::class.java)
+        context.startService(intentService)
     }
 }

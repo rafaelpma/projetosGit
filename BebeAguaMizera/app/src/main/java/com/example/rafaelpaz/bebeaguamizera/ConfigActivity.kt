@@ -1,17 +1,13 @@
 package com.example.rafaelpaz.bebeaguamizera
 
 import android.app.Activity
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.RadioButton
-import java.util.*
+
 
 class ConfigActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -29,8 +25,8 @@ class ConfigActivity : AppCompatActivity(), View.OnClickListener {
     private var radioButton2Horas : RadioButton? = null
 
     private var UM_MINUTO :Long = 60000
-    //private var DEZ_MINUTOS :Long = 600000
-    private var DEZ_MINUTOS :Long = 180000// setando 3 minutos para teste
+    private var DEZ_MINUTOS :Long = 600000
+    //private var DEZ_MINUTOS :Long = 180000// setando 3 minutos para teste
     private var UMA_HORA :Long = 3600000
     private var DUAS_HORAS :Long = 7200000
 

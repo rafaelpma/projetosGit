@@ -11,6 +11,7 @@ import android.util.Log
 class AlarmeReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
+
         Log.i("INFO", "AlarmeReceiver :: Iniciado...")
         var intent = Intent(context, MainActivity::class.java)
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -19,7 +20,7 @@ class AlarmeReceiver : BroadcastReceiver() {
 
         var notification = NotificationCompat.Builder(context,  "id").
                 setSmallIcon(R.drawable.notification_icon_background).
-                setContentTitle("Bebe Água Mizera!!").setContentText("Hora de manter o corpo hidratado para evitar problema com os ríns!").
+                setContentTitle("Bebe Água Mizera!!").setContentText("É o momento de manter o corpo hidratado!").
                 setContentIntent(pendingIntent).setAutoCancel(false).build();
         var manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
