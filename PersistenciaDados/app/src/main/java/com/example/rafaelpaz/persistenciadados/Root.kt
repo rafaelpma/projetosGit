@@ -1,6 +1,6 @@
 package com.example.rafaelpaz.persistenciadados
 
-import java.util.ArrayList
+
 class Root {
     lateinit var name:String
     lateinit var height:String
