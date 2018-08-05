@@ -14,6 +14,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.imagem
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
