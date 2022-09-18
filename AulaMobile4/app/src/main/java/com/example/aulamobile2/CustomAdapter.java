@@ -42,7 +42,7 @@ public class CustomAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder viewHolder, int position) {
         viewHolder.getTvText().setText(localDataSet.get(position));
-        viewHolder.getLayoutPai().setBackgroundColor (Color.parseColor(colors[position]));
+        viewHolder.getLayoutPai().setBackgroundColor (Color.parseColor(colors[0]));
 
     }
 
