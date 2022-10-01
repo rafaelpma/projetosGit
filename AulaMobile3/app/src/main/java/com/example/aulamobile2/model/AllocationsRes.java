@@ -1,13 +1,23 @@
 package com.example.aulamobile2.model;
 
-public class Allocations {
+public class AllocationsRes {
 
 
+    private int id;
     private Curso course;
     private Professor professor;
     private String dayOfWeek;
     private String endHour;
     private String startHour;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
 
     public Curso getCourse() {

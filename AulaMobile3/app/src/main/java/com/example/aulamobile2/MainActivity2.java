@@ -37,7 +37,7 @@ public class MainActivity2 extends AppCompatActivity {
         lista.add("Rodrigo");
         lista.add("Caio Lucas");
 
-        customAdapter = new CustomAdapter(lista, colors);
+        customAdapter = new CustomAdapter(lista);
 
         RecyclerView recyclerView = findViewById(R.id.rvList);
         recyclerView.setAdapter(customAdapter);

@@ -7,38 +7,26 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.example.aulamobile2.model.DepartamentoRes;
-import com.example.aulamobile2.model.ProfessorRes;
 import com.example.aulamobile2.service.DepartamentoService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity2 extends AppCompatActivity {
+public class DepartmentActivity extends AppCompatActivity {
     private CustomAdapter customAdapter;
 
     private List<DepartamentoRes> departments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_department);
 
-        String[] colors = getResources().getStringArray(R.array.colors);
 
         List<String> lista = new ArrayList<>();
-//        lista.add("Rafael Paz");
-//        lista.add("Laura Paz");
-//        lista.add("Glaucione Paz");
-//        lista.add("Saulo Paz");
-//        lista.add("Rilda Paz");
-//        lista.add("Isaias Monteiro");
-//        lista.add("Ana Carla Paz");
-//        lista.add("Ana Carolina Paz");
-//        lista.add("Rodrigo");
-//        lista.add("Caio Lucas");
+
 
         DepartamentoService retrofit = RetrofitConfig
                 .newInstance()
@@ -54,7 +42,7 @@ public class MainActivity2 extends AppCompatActivity {
                             lista.add(item.getName());
                         }
 
-                        customAdapter = new CustomAdapter(lista, colors);
+                        customAdapter = new CustomAdapter(lista);
 
                         RecyclerView recyclerView = findViewById(R.id.rvList);
                         recyclerView.setAdapter(customAdapter);

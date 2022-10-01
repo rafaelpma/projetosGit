@@ -1,6 +1,5 @@
 package com.example.aulamobile2;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class CustomAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     private List<String> localDataSet;
-    private String[] colors;
 
-    public CustomAdapter(List<String> localDataSet, String[] colors) {
+
+    public CustomAdapter(List<String> localDataSet) {
         this.localDataSet = localDataSet;
-        this.colors = colors;
+
     }
 
 
@@ -42,7 +41,7 @@ public class CustomAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder viewHolder, int position) {
         viewHolder.getTvText().setText(localDataSet.get(position));
-        viewHolder.getLayoutPai().setBackgroundColor (Color.parseColor(colors[position]));
+
 
     }
 
