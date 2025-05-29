@@ -15,25 +15,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AulaMobile2"
         tools:targetApi="31">
+        <activity
+            android:name=".PrincipalActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AllocationActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".ProfessorActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".CourseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DepartmentActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity2"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
